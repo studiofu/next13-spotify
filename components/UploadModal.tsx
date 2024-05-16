@@ -17,11 +17,16 @@ import Button from './Button';
 const UploadModal = () => {
   const [isLoading, setIsLoading] = useState(false);
 
+  // zustand
   const uploadModal = useUploadModal();
+
+  // client side supa
   const supabaseClient = useSupabaseClient();
+  
   const { user } = useUser();
   const router = useRouter();
 
+  // react hook form and not using zod
   const {
     register,
     handleSubmit,
@@ -59,14 +64,15 @@ const UploadModal = () => {
       // Upload song
       const { 
         data: songData, 
-        error: songError 
+        error: songError,      
       } = await supabaseClient
         .storage
         .from('songs')
         .upload(`song-${values.title}-${uniqueID}`, songFile, {
           cacheControl: '3600',
           upsert: false
-        });
+        }        
+      );
 
       if (songError) {
         setIsLoading(false);

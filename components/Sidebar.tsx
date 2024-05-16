@@ -20,7 +20,9 @@ interface SidebarProps {
 
 const Sidebar = ({ children, songs }: SidebarProps) => {
   const pathname = usePathname();
-  const player = usePlayer();
+  
+  // Get the player state, using zustand
+  const player = usePlayer(); 
 
   const routes = useMemo(() => [
     {

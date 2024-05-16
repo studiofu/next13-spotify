@@ -75,6 +75,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
   );
 
   useEffect(() => {
+    //console.log(`trigger play`)
     sound?.play();
     
     return () => {

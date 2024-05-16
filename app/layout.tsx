@@ -27,6 +27,8 @@ export default async function RootLayout({
 }) {
   const products = await getActiveProductsWithPrices();
   const userSongs = await getSongsByUserId();
+  console.log('root layout')
+  //console.log('userSongs', userSongs)
 
   return (
     <html lang="en">

@@ -7,6 +7,7 @@ import useGetSongById from "@/hooks/useGetSongById";
 import PlayerContent from "./PlayerContent";
 
 const Player = () => {
+  console.log('trigger player')
   const player = usePlayer();
   const { song } = useGetSongById(player.activeId);
 

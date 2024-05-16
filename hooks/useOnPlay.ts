@@ -16,12 +16,15 @@ const useOnPlay = (songs: Song[]) => {
       return authModal.onOpen();
     }
 
-    if (!subscription) {
-      return subscribeModal.onOpen();
-    }
+    // if (!subscription) {
+    //   return subscribeModal.onOpen();
+    // }
+
+    console.log(player.ids);
 
     player.setId(id);
     player.setIds(songs.map((song) => song.id));
+
   }
 
   return onPlay;
